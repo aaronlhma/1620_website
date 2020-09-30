@@ -1,5 +1,12 @@
 body {
     background-color: beige;
-
-
+}
+section{
+    background-color: lightsalmon;
+}
+nav {
+    background-color:rosybrown;
+}
+footer{
+    background-color: seagreen;
 }
