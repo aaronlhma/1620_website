@@ -9,7 +9,10 @@ body {
     border-color:maroon;
 }
 
-
+h1{
+    color:darkblue;
+    font-family:sans-serif;
+}
 nav {
     background-color:lightblue;
     margin: auto;
