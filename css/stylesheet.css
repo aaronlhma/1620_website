@@ -2,6 +2,7 @@ body {
     background-color:beige;
     display:flex;
     flex-wrap:wrap;
+    flex-direction:column;
 }
 
 .imageborder{
@@ -15,6 +16,28 @@ h1{
     color:darkblue;
     font-family:sans-serif;
 }
+main.courses{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:left;
+}
+main p.blurb last-of-type{
+    border-top:dotted;
+    border-color:Grey;
+}
+main p.blurb first-of-type{
+    border-top:dotted;
+    border-color:grey;
+}
+main p.link last-of-type{
+    border-top:solid;
+    border-color:Grey;
+}
+main p.link first-of-type{
+    border-top:dotted;
+    border-color:grey;
+}
 nav {
     order:-1;
     width:100%;
@@ -25,8 +48,10 @@ nav {
     border-style: dotted;
     display:flex;
     flex-wrap:wrap;
+    flex-direction:column;
     justify-content:center;
 }
+
 nav a{
     padding:5px;
 }
@@ -38,4 +63,31 @@ header {
 
 footer{
     background-color: seagreen;
+}
+
+@media only screen and (min-width:600px){
+    body{
+        flex-direction:row;
+    }
+    nav {
+        flex-direction:row;
+    }
+    main.courses{
+        display:flex;
+        flex-direction:row;
+    }
+    main > p.link{
+        padding:0px;
+        margin:0px;
+        margin-bottom:10px;
+        width:30%;
+        
+    }
+    main > p.blurb{
+        padding:0px;
+        margin:0px;
+        margin-bottom:10px;
+        width:65%;
+        
+    
 }
