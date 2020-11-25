@@ -30,12 +30,35 @@ function findCourse(courseList){
         }
     }
     if (courseExists == false ){
-        course = {code: code, name: null}
-        courseList.push(course)
-        console.log(`Successfully added new course: ${code}`)
+        course = {code: code + " N/A", date: "Fall 2020"}
+        courseList.push(course);
+        console.log(`Successfully added new course: ${code}`);
+
+        
+        var courseName = document.createElement("p");
+        courseName.classList.add("link")
+        var date = document.createElement("p");
+        courseName.appendChild(date)
+        var description = document.createElement("p");
+        description.classList.add("blurb")
+
+        var textnode = document.createTextNode("ACIT-" + code);
+        var textnode2 = document.createTextNode("Fall 2020")
+        var textnode3 = document.createTextNode("N/A")
+
+        courseName.append(textnode);
+        date.append(textnode2);
+        description.append(textnode3);
+
+        var mainElement = document.getElementById("courses");
+        mainElement.appendChild(courseName)
+        mainElement.appendChild(description)
     }
 }
+
 
 courseList = createCourseArray(courseList);
 
 findCourse(courseList);
+
+console.log(courseList);

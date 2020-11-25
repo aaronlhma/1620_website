@@ -16,7 +16,7 @@ h1{
     color:darkblue;
     font-family:sans-serif;
 }
-main.courses{
+#courses{
     display:flex;
     flex-direction:column;
     flex-wrap:wrap;
@@ -72,7 +72,7 @@ footer{
     nav {
         flex-direction:row;
     }
-    main.courses{
+    #courses{
         display:flex;
         flex-direction:row;
     }
