@@ -5,18 +5,19 @@ courseList = [{code: "ACIT 1620", name: "Web Tech"},
 
 do {
     var code = prompt("Enter a 4-digit course code: ");
-} while ( (isNaN(code) == true) || (code.length > 4 || code.length < 4))
+} while ( (isNaN(code) == true) || (code.length != 4))
 
-courseexists = false;
-code = "ACIT " + String(code);
+courseExists = false;
+
 for (i=0;i<courseList.length;i++){
-    if (courseList[i].code == code){
+    if (courseList[i].code.includes(code)){
         console.log(`Yes I am taking the course: ${courseList[i].code} ${courseList[i].name}`);
-        courseexists = true;
+        courseExists = true;
+        break;
     }
 }
 
-if (courseexists == false ){
+if (courseExists == false ){
     course = {code: code, name: null}
     courseList.push(course)
     console.log(`Successfully added new course: ${code}`)
