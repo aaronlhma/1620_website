@@ -24,7 +24,7 @@ function findCourse(courseList){
     for (i=0;i<courseList.length;i++){
         if (courseList[i].code.includes(code)){
             console.log(`Yes I am taking the course: ${courseList[i].code}`);
-            
+            document.getElementById(code).style.backgroundColor="green";
             courseExists = true;
             break;
         }
