@@ -14,30 +14,28 @@ function createCourseArray(courseList){
 }
 
 function findCourse(courseList){
+    
     do {
         var code = prompt("Enter a 4-digit course code: ");
     } while ( (isNaN(code) == true) || (code.length != 4))
     
+    courseExists = false;
+
+    for (i=0;i<courseList.length;i++){
+        if (courseList[i].code.includes(code)){
+            console.log(`Yes I am taking the course: ${courseList[i].code}`);
+            
+            courseExists = true;
+            break;
+        }
+    }
+    if (courseExists == false ){
+        course = {code: code, name: null}
+        courseList.push(course)
+        console.log(`Successfully added new course: ${code}`)
+    }
 }
 
 courseList = createCourseArray(courseList);
 
-do {
-    var code = prompt("Enter a 4-digit course code: ");
-} while ( (isNaN(code) == true) || (code.length != 4))
-
-courseExists = false;
-
-for (i=0;i<courseList.length;i++){
-    if (courseList[i].code.includes(code)){
-        console.log(`Yes I am taking the course: ${courseList[i].code}`);
-        courseExists = true;
-        break;
-    }
-}
-
-if (courseExists == false ){
-    course = {code: code, name: null}
-    courseList.push(course)
-    console.log(`Successfully added new course: ${code}`)
-}
+findCourse(courseList);
